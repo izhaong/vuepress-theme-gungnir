@@ -1,3 +1,4 @@
+import { path } from "@vuepress/utils";
 import { defineUserConfig } from "vuepress";
 import type { GungnirThemeOptions } from "vuepress-theme-gungnir";
 import { i18n } from "vuepress-theme-gungnir";
@@ -62,7 +63,8 @@ export default defineUserConfig<GungnirThemeOptions>({
     // use vite by default
     "@vuepress/vite",
 
-  theme: "vuepress-theme-gungnir",
+  // theme: "vuepress-theme-gungnir",
+  theme: path.resolve(__dirname, "../../packages/theme/src/node/index.ts"),
 
   themeConfig: {
     repo: "Renovamen/vuepress-theme-gungnir",
@@ -186,6 +188,7 @@ export default defineUserConfig<GungnirThemeOptions>({
     footer: `
       &copy; <a href="https://github.com/Renovamen" target="_blank">Renovamen</a> 2018-2022
       <br>
+      &power
       Powered by <a href="https://v2.vuepress.vuejs.org" target="_blank">VuePress</a> &
       <a href="https://github.com/Renovamen/vuepress-theme-gungnir" target="_blank">Gungnir</a>
     `
